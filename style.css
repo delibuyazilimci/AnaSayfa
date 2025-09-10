@@ -1,0 +1,284 @@
+/* ======== GENEL AYARLAR VE DEĞİŞKENLER ======== */
+:root {
+    --primary-color: #0a2540; /* Ana Koyu Renk (Lacivert) */
+    --secondary-color: #007bff; /* Vurgu Rengi (Mavi) */
+    --background-color: #f8f9fa; /* Arka Plan Rengi (Çok Açık Gri) */
+    --text-color: #333; /* Metin Rengi */
+    --light-text-color: #fff; /* Açık Renk Metin */
+    --card-background: #ffffff; /* Kartların Arka Planı */
+    --font-family: 'Poppins', sans-serif; /* Ana Font */
+    --container-width: 1100px; /* Site Genişliği */
+    --box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Gölgelendirme */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Sayfa içi linklere yumuşak kaydırma */
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+section {
+    padding: 6rem 0;
+}
+
+/* ======== HEADER VE NAVİGASYON ======== */
+.header {
+    background-color: var(--card-background);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* ======== BUTONLAR ======== */
+.cta-button {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Mavinin biraz daha koyu tonu */
+}
+
+.cta-button.large {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+}
+
+/* ======== HERO BÖLÜMÜ ======== */
+.hero-section {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 8rem 0;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section .subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-weight: 300;
+}
+
+/* ======== HİZMETLER BÖLÜMÜ ======== */
+.services-section {
+    background-color: var(--card-background);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--background-color);
+    padding: 2.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--box-shadow);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+/* ======== PORTFOLYO BÖLÜMÜ ======== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+
+.portfolio-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0));
+    color: var(--light-text-color);
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover .overlay {
+    transform: translateY(0);
+}
+
+.overlay h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* ======== HAKKIMDA VE İLETİŞİM BÖLÜMLERİ ======== */
+.about-section, .contact-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-section {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border-radius: 10px;
+}
+
+.contact-section h2 {
+    color: var(--light-text-color);
+}
+
+/* ======== FOOTER ======== */
+.footer {
+    background-color: var(--primary-color);
+    color: #a0a0a0;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links a {
+    color: #a0a0a0;
+    font-size: 1.5rem;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--light-text-color);
+}
+
+/* ======== MOBİL UYUMLULUK (RESPONSIVE) ======== */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .main-nav {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .footer .container {
+        flex-direction: column;
+    }
+
+    .footer p {
+        margin-bottom: 1rem;
+    }
+}
